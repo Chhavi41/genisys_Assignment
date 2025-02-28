@@ -60,6 +60,7 @@ Base URL: http://localhost:8000/dogs
 
 
 
+
 ### 🐶 Dog API - Docker Setup Guide  
 
 ### 🛠 Prerequisites  
@@ -70,7 +71,7 @@ Before proceeding, ensure that you have:
 
 ---
 
-##$ 📥 1️⃣ Clone the Repository  
+### 📥 1️⃣ Clone the Repository  
  ```sh
  git clone https://github.com/Chhavi41/genisys_Assignment.git
  cd genisys_Assignment
@@ -97,6 +98,7 @@ docker build -t dog-api .
 ```sh
 docker run -p 8000:8000 --env-file .env --name dog-api-container dog-api
 ```
+
 
 
 
