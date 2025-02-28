@@ -58,6 +58,48 @@ Base URL: http://localhost:8000/dogs
 - Headers:  x-api-key: API key for authentication
 
 
+# 🐶 Dog API - Docker Setup Guide  
+
+
+## 🛠 Prerequisites  
+Before proceeding, ensure that you have:  
+
+- [Docker](https://www.docker.com/get-started) installed  
+- MongoDB running **locally (`localhost:27017`)** or a **remote MongoDB instance**  
+
+---
+
+## 📥 1️⃣ Clone the Repository  
+ ```sh
+ git clone https://github.com/Chhavi41/genisys_Assignment.git
+ cd genisys_Assignment
+ ```
+
+
+## 2️⃣ Create a .env File
+Create a .env file in the root directory and define the required environment variables:
+```sh PORT=8000
+USE_DOCKER=true
+MONGO_URI=mongodb://localhost:27017/dogpics
+MONGO_URI_DOCKER=mongodb://host.docker.internal:27017/dogpics
+API_KEYS=1234567890abcdef,abcdef1234567890
+```
+
+Note: Note: The USE_DOCKER variable ensures that the correct MongoDB URI is used inside the Docker container.
+Set USE_DOCKER=true only when MongoDB is running locally on your host machine (outside Docker).
+If MongoDB is running inside a separate Docker container, you should set MONGO_URI_DOCKER to the appropriate Docker network address instead.
+
+## 3️⃣ Build the Docker Image
+docker build -t dog-api .
+
+## 4️⃣ Run the Docker Container with .env
+```sh
+docker run -p 8000:8000 --env-file .env --name dog-api-container dog-api
+```
+
+
+
+
 
 
 
