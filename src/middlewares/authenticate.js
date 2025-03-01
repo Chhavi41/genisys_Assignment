@@ -12,7 +12,6 @@ const authenticateApiKey = (req, res, next) => {
   if (!validApiKeys.includes(apiKey)) {
     return res.status(403).json({ message: "Invalid API key" });
   }
-  console.log('15: successfull')
   next();
 };
 
