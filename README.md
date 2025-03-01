@@ -148,6 +148,18 @@ By default, the server will be running at:
 
 
 
+## Running Tests
+This project uses Jest as the testing framework along with Supertest for HTTP request testing and MongoMemoryServer for an in-memory MongoDB instance. 
+
+Install Dependencies
+```sh
+npm install
+```
+
+RUN TESTS
+```sh
+npm test
+```
 
 
 
